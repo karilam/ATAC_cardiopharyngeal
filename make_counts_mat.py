@@ -14,6 +14,7 @@ for fil in os.listdir('/home/kari/Documents/ATAC_analysis/bedtools_multicov_coun
 w = file('/home/kari/Documents/ATAC_analysis/610151820_counts.txt','w')
 
 conds = os.listdir('/home/kari/Documents/ATAC_analysis/bedtools_multicov_counts')
+conds.sort()
 peaks = list(peaks)
 
 w.write('peaks' + '\t' + '\t'.join(conds) + '\n')
@@ -22,4 +23,5 @@ for i in range(len(peaks)):
 	for j in range(len(conds)):
 		w.write('\t' + cond_peak_counts[conds[j]][peaks[i]])
 	w.write('\n')
-	
+
+w.close()
